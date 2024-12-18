@@ -266,6 +266,7 @@ footer {
 /*-------------------------------------------------------- Responsive Design */
 
 @media (max-width: 980px) {
+
     #profile-splash {
         grid-template-columns: repeat(1, 1fr);
         display: grid;
@@ -324,8 +325,35 @@ footer {
 
 }
 
-@media (max-width: 980px) {
+@media (max-width: 780px) {
+    .centered-container {
+        margin: 0px auto;
+        padding: 4px;
+        width: 100%;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+        flex: 1;
+        background-color: #fef8f3;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    #prof-img {
+        width: 70%;
+        border-radius: 45%;
+        transition: transform 0.35s ease;;
+    }
+
     #about-section {
         width: 100%;
+        margin: 1px auto;
+    }
+
+    #about-title,
+    #about-description {
+        text-align: center;
+        width: 100%;
+        margin: 0px auto;
     }
 }
