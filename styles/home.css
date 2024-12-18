@@ -105,16 +105,16 @@ nav ul li a.active {
 
 /*-------------------------------------------------------- Main Content Styling */
 .centered-container {
-    margin: 0px auto; /* Centers the container */
+    margin: 0px auto;
     padding: 15px 6px 6px 6px;
-    width: 78%; /* Takes up 78% of the page width */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    width: 78%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     flex: 1;
-    background-color: #fef8f3; /* White background for the div */
+    background-color: #fef8f3;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Aligns content to the top */
+    justify-content: flex-start;
 }
 
 #profile-splash {
@@ -179,12 +179,12 @@ nav ul li a.active {
     display: flex;
     margin: 14px auto;
     padding: 5px 0px 30px 0px;
-    width: 85%;
+    width: 83%;
     grid-template-columns: repeat(1, 1fr);
     border: 1px solid #ccc;
     border-radius: 10px;
     color: black;
-    background-color: white;
+    background-color: var(--main-bg-color);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
     text-align: center;
 }
@@ -198,13 +198,26 @@ nav ul li a.active {
     border-radius: 10px;
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
-    width: 50%;
+    width: 60%;
 }
 
 /* Hover effect for cards */
 .card:hover {
     transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.descriptions {
+    padding: 0px;
+    margin: 0px auto;
+    width: 90%;
+    text-align: left;
+}
+
+.descriptions li {
+    padding: 5px;
+}
+
 
 .pdf {
     margin: auto;

@@ -79,7 +79,7 @@ class Experience {
 
 // Function to set theme *eventually given a passed theme of choice
 function SetTheme () {
-    var theme = new Theme('red', 'blue', 'green', 'yellow', 'purple');
+    var theme = new Theme('pink', 'purple', 'light-blue', 'pink', 'white');
     const root = document.documentElement;
     root.style.setProperty('--main-bg-color', theme.background);
     root.style.setProperty('--main-hover-color', theme.hover);
@@ -126,13 +126,18 @@ function BuildExperienceSection(sectionType = 'experience'){
         mainCard.innerHTML = "";
         var mainTitle = document.createElement('h2');
         mainTitle.id = 'main-card-title';
-        mainTitle.innerText = 'Professional Experience';
+        mainTitle.innerText = '';
         mainCard.appendChild(mainTitle);
         experienceArray.forEach( experience => {
             var card = document.createElement('div');
             card.classList.add('card');
-            card.innerHTML = `<h2>${experience.location}</h2><h3>${experience.title}</h3>`;
-            experience.description.forEach(description => card.innerHTML += '<p>' + description + '</p>');
+            card.innerHTML = `<h2>${experience.title}</h2><h4>${experience.location}</h4>`;
+            var descriptionList = document.createElement('div');
+            descriptionList.classList.add('descriptions');
+            descriptionList.innerHTML += '<ul>';
+            experience.description.forEach(description => descriptionList.innerHTML += '<li>' + description + '</li>');
+            descriptionList.innerHTML += '</ul>';
+            card.appendChild(descriptionList);
             card.innerHTML += `<h4>${experience.expStart} - ${experience.expEnd}</h4>`;
             mainCard.appendChild(card);
         });
@@ -168,7 +173,7 @@ function BuildExperienceSection(sectionType = 'experience'){
         mainCard.innerHTML = "";
         var mainTitle = document.createElement('h2');
         mainTitle.id = 'main-card-title';
-        mainTitle.innerText = 'Educational Experience';
+        mainTitle.innerText = '';
         mainCard.appendChild(mainTitle);
         experienceArray.forEach( experience => {
             var card = document.createElement('div');
@@ -185,7 +190,7 @@ function BuildExperienceSection(sectionType = 'experience'){
         mainCard.innerHTML = "";
         var mainTitle = document.createElement('h2');
         mainTitle.id = 'main-card-title';
-        mainTitle.innerText = 'Resume';
+        mainTitle.innerText = '';
         mainCard.appendChild(mainTitle);
 
         var pdfView = document.createElement('iframe');

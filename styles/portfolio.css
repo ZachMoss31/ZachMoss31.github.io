@@ -1,15 +1,35 @@
-/* Body Styling */
+/*-------------------------------------------------------- Global Styling (adjustable with JS later) */
+:root {
+    --main-bg-color: rgb(56, 71, 67);
+    --main-hover-color: rgb(239, 197, 8);
+    --main-selected-color: rgb(226, 64, 14);
+    --main-selection-color: rgb(239, 197, 8);
+    --main-selection-text-color: rgb(255, 255, 255);
+}
+
+/* Selection Color */
+::selection {
+    color: var(--main-selection-text-color);
+    background-color: var(--main-selection-color);
+}
+
+::-moz-selection {
+    color: var(--main-selection-text-color);
+    background-color: var(--main-selection-color);
+}
+
+/*-------------------------------------------------------- Body Styling */
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: hsl(260, 15%, 39%);
+    background-color: var(--main-bg-color);
     display: flex;
     flex-direction: column;
 }
 
-/* Header Styling */
+/*-------------------------------------------------------- Header Styling */
 header {
     width: 100%;
     padding: 20px 0;
@@ -36,16 +56,20 @@ nav ul li a {
     font-size: 18px;
     font-weight: bold;
     display: inline-block;
-    transition: color 0.3s ease, transform 0.15s ease-in-out;
+    transition: color 0.15s ease, transform 0.1s ease-in-out;
 }
 
 nav ul li a:hover {
-    color: #00c8ff; /* Color change on hover */
+    color: var(--main-hover-color);
     transform: scale(1.4);
 }
 
-/* Button Card Styling */
-/* Container to hold the button cards */
+nav ul li a.active {
+    color: var(--main-selected-color);
+    transform: scale(1.4);
+}
+
+/*-------------------------------------------------------- Button Card Styling */
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -54,28 +78,34 @@ nav ul li a:hover {
 
 /* Styling for individual button cards */
 .button-card {
-    background-color: #ccc;
     padding: 25px 50px;
     border-radius: 10px;
     font-size: 16px;
     text-align: center;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.1s ease, transform 0.1s ease;
     margin: 1px;
     flex: 1 1 100%;
     max-width: 210px;
+    background-color: #ccc;
 }
 
 /* Hover effect for button cards */
 .button-card:hover {
+    background-color: var(--main-hover-color);
     transform: scale(1.04);
+}
+
+.button-card.active {
+    background-color: var(--main-selected-color);
+    color: white;
+    transform: scale(1.03);
 }
 
 #card-model:hover,
 #card-model.active {
     background-color: #00c8ff;
 }
-
 
 #card-vfx:hover,
 #card-vfx.active {
@@ -88,7 +118,6 @@ nav ul li a:hover {
     color: white;
 }
 
-
 #card-ml:hover,
 #card-ml.active {
     background-color: #ffe600;
@@ -100,18 +129,18 @@ nav ul li a:hover {
 }
 
 
-/* Main Content Styling */
+/*-------------------------------------------------------- Main Content Styling */
 .centered-container {
-    margin: 0px auto; /* Centers the container */
+    margin: 0px auto;
     padding: 15px 6px 6px 6px;
-    width: 78%; /* Takes up 78% of the page width */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    width: 78%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     flex: 1;
-    background-color: #ffffff; /* White background for the div */
+    background-color: #fef8f3;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Aligns content to the top */
+    justify-content: flex-start;
 }
 
 /* Display Area Styling */
@@ -133,13 +162,13 @@ nav ul li a:hover {
     text-align: center;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
-    width: 100%; /* Fill the grid cell */
-    height: 400px; /* Fixed height */
+    width: 100%;
+    height: 400px;
 }
 
 /* Hover effect for cards */
 .card:hover {
-    transform: scale(1.04);
+    transform: scale(1.02);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -169,17 +198,17 @@ footer {
 
 /* Hover Effect */
 .social-links a:hover {
-    color: #00c8ff; /* Light blue on hover */
+    color: var(--main-hover-color);
     transform: scale(1.2); /* Slightly enlarges icons */
 }
 
 .social-links #insta:hover {
-    color: #ff2a00; 
+    color: var(--main-selected-color);
     transform: scale(1.2); 
 }
 
 .social-links #bluesky:hover {
-    color: #ff2a00; 
+    color: var(--main-selected-color);
     transform: scale(1.2); 
 }
 

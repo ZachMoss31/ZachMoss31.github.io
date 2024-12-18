@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Select all buttons
+
+    // Select all buttons, nav buttons
     const buttons = document.querySelectorAll('.button-card');
+    const navButtons = document.querySelectorAll('nav ul li a');
 
     // Add event listeners to each button
     buttons.forEach(button => {
@@ -15,6 +17,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function setActiveButton(clickedButton) {
         buttons.forEach(button => button.classList.remove('active')); // Remove active class
         clickedButton.classList.add('active'); // Add active class to clicked button
+    }
+
+    // Add event listeners to each nav button
+    navButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            setActiveNav(this);
+        });
+    });
+
+    // Function to set active nav button styling
+    function setActiveNav(clickedNav) {
+        navButtons.forEach(button => button.classList.remove('active')); // Remove active class
+        clickedNav.classList.add('active'); // Add active class to clicked button
     }
 
     // Function to generate cards based on category
@@ -65,5 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const modelButton = document.getElementById('card-model');
     if (modelButton) {
         modelButton.click();
+    }
+
+    // Trigger "Portfolio" nav button on page load
+    const portfolioNav = document.getElementById('nav-portfolio');
+    if (portfolioNav) {
+        portfolioNav.click();
     }
 });

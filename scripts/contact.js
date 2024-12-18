@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', function() {
             setActiveButton(this);
         });
-        if(button.id == "card-experience"){
-            document.getElementById('card-experience').addEventListener('click', function() { BuildExperienceSection('experience'); });
+        if(button.id == "card-submit"){
+            button.addEventListener('click', function() { SubmitMessage(); });
         }
     });
 
@@ -42,3 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+function SubmitMessage() {
+    
+}
