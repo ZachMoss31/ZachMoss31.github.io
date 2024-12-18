@@ -212,30 +212,24 @@ footer {
     transform: scale(1.2); 
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/*-------------------------------------------------------- Responsive Design */
+
+@media (max-width: 980px) {
     /* Stack cards vertically for small screens in the display area */
     #display-area {
         grid-template-columns: 1fr; /* 1 column layout for small screens */
     }
 
+    /* Styling for individual cards */
     .card {
-        height: auto; /* Allow the cards to adjust their height */
+        margin: 5px auto;
+        background-color: white;
+        color: black;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+        width: 97%;
     }
 
-    /* Adjust the button card layout for small screens */
-    .card-container {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .card-container .button-card {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-
-    .social-links a {
-        display: block; /* Stack links vertically */
-        margin: 10px auto; /* Center them */
-    }
 }

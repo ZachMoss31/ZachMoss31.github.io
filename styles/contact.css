@@ -157,15 +157,6 @@ nav ul li a.active {
     transform: scale(1.02);
 }
 
-.contact-form-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 600px;
-    width: 100%;
-}
-
 h2 {
     margin-top: 0;
     color: #333;
@@ -241,29 +232,27 @@ footer {
 }
 
 /*-------------------------------------------------------- Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 940px) {
     /* Stack cards vertically for small screens in the display area */
     #display-area {
         grid-template-columns: 1fr; /* 1 column layout for small screens */
     }
 
-    .card {
-        height: auto; /* Allow the cards to adjust their height */
-    }
-
-    /* Adjust the button card layout for small screens */
-    .card-container {
+    #main-card {
+        flex: 1;
         flex-direction: column;
-        gap: 10px;
+        justify-content: flex-start;
+        display: flex;
+        margin: 5px auto;
+        padding: 5px 0px 10px 0px;
+        width: 95%;
+        grid-template-columns: repeat(1, 1fr);
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        color: black;
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+        text-align: center;
     }
 
-    .card-container .button-card {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-
-    .social-links a {
-        display: block; /* Stack links vertically */
-        margin: 10px auto; /* Center them */
-    }
 }
