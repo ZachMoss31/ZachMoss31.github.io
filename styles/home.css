@@ -266,6 +266,44 @@ footer {
 /*-------------------------------------------------------- Responsive Design */
 
 @media (max-width: 980px) {
+    .centered-container {
+        margin: 0px auto;
+        padding: 4px;
+        width: 100%;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+        flex: 1;
+        background-color: #fef8f3;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    #img-section {
+        width: 100%;
+        text-align: center;
+    }
+
+    #prof-img {
+        width: 50%;
+        border-radius: 45%;
+        transition: transform 0.35s ease;;
+    }
+
+    #about-section,
+    #about-title,
+    #about-description {
+        width: 350px;
+        margin: 5px auto;
+        padding: 5px;
+        text-align: center;
+    }
+
+    #about-text {
+        width: 100%;
+        padding: 10px;
+        text-align: justify;
+    }
 
     #profile-splash {
         grid-template-columns: repeat(1, 1fr);
@@ -273,25 +311,11 @@ footer {
         margin: 0px auto;
     }
     
-    #img-section {
-        width: 100%;
-        text-align: center;
-    }
 
-    #about-title {
-        padding: 20px 0px 4px 4px;
-    }
 
     /* Stack cards vertically for small screens in the display area */
     #display-area {
         grid-template-columns: 1fr; /* 1 column layout for small screens */
-    }
-
-    #about-title,
-    #about-description {
-        text-align: center;
-        width: 100%;
-        margin: 0px auto;
     }
 
     #main-card {
@@ -301,7 +325,7 @@ footer {
         display: flex;
         margin: 5px auto;
         padding: 5px 0px 30px 0px;
-        width: 97%;
+        width: 100%;
         grid-template-columns: repeat(1, 1fr);
         border: 1px solid #ccc;
         border-radius: 10px;
@@ -320,40 +344,6 @@ footer {
         border-radius: 10px;
         text-align: center;
         transition: transform 0.2s ease, box-shadow 0.3s ease;
-        width: 85%;
-    }
-
-}
-
-@media (max-width: 780px) {
-    .centered-container {
-        margin: 0px auto;
-        padding: 4px;
-        width: 100%;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-        flex: 1;
-        background-color: #fef8f3;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-
-    #prof-img {
-        width: 70%;
-        border-radius: 45%;
-        transition: transform 0.35s ease;;
-    }
-
-    #about-section {
-        width: 100%;
-        margin: 1px auto;
-    }
-
-    #about-title,
-    #about-description {
-        text-align: center;
-        width: 100%;
-        margin: 0px auto;
+        width: 95%;
     }
 }
