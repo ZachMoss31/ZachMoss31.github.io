@@ -4,37 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="../styles/styles.css"> <!-- Link to your CSS file -->
+    <link 
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/portfolio.css"> 
 </head>
 <body>
-    <canvas id="glCanvas"></canvas>
+    <script src="../scripts/portfolio.js"></script>
 
+    <!-- Header and Navigation -->
     <header>
         <nav>
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="container">
-        <h1>My Portfolio</h1>
-        <p>Welcome to my portfolio page. Here are some of my projects.</p>
-
-        <!-- Add portfolio content like projects, images, etc. -->
-        <div class="portfolio-item">
-            <h2>Project 1</h2>
-            <p>Description of project 1.</p>
+    <!-- Main Content -->
+    <div class="centered-container">
+        <!-- Topical Cards -->
+        <div class="card-container">
+            <div id="card-model" class="button-card">Modeling</div>
+            <div id="card-vfx" class="button-card">VFX</div>
+            <div id="card-engine" class="button-card">Engine</div>
+            <div id="card-ml" class="button-card">Machine Learning</div>
+            <div id="card-misc" class="button-card">Misc</div>
         </div>
 
-        <div class="portfolio-item">
-            <h2>Project 2</h2>
-            <p>Description of project 2.</p>
+        <!-- Display Area -->
+        <div id="content-area">
+            <h1 id="content-area-title">Display Area</h1>
+            <h2 id="content-area-description">Display Area Definition</h2>
+            <div id="display-area">
+                <div class="card" id="card1">
+                    <h2>Project 1</h2>
+                    <p>Description of project 1.</p>
+                </div>
+                <div class="card" id="card2">
+                    <h2>Project 2</h2>
+                    <p>Description of project 2.</p>
+                </div>
+                <div class="card" id="card3">
+                    <h2>Project 3</h2>
+                    <p>Description of project 3.</p>
+                </div>
+                <div class="card" id="card4">
+                    <h2>Project 4</h2>
+                    <p>Description of project 4.</p>
+                </div>
+                <div class="card" id="card5">
+                    <h2>Project 5</h2>
+                    <p>Description of project 5.</p>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script src="webgl-shader.js"></script> <!-- Same WebGL script if needed -->
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Zach Moss. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/zach-m-a21b2223a/" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/ZachMoss31" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a id="insta" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a id="bluesky" aria-label="Bluesky">
+                <i class="fa-brands fa-bluesky"></i>
+            </a>
+        </div>
+    </footer>
 </body>
 </html>

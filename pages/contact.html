@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link 
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/contact.css">
+</head>
+<body>
+    <script src="../scripts/contact.js"></script>
+    
+    <!-- Header and Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a id="nav-home" href="../index.html">Home</a></li>
+                <li><a id="nav-portfolio" href="../pages/portfolio.html">Portfolio</a></li>
+                <li><a id="nav-contact" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main Content -->
+    <div class="centered-container">
+        <!-- Display Area -->
+        <div id="content-area">
+            <div id="main-card">
+                <h1>Contact Me</h1>
+                
+                <!-- Contact Form -->
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
+                    </div>
+
+                    <!-- Topical Cards -->
+                    <div class="card-container">
+                        <div id="card-submit" class="button-card">Submit</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Zach Moss. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/zach-m-a21b2223a/" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/ZachMoss31" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a id="insta" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a id="bluesky" aria-label="Bluesky">
+                <i class="fa-brands fa-bluesky"></i>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

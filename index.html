@@ -4,30 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link 
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles/home.css">
 </head>
 <body>
-    <div>
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="pages/portfolio.html">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-    </div>
-
-    <div class="prof-info">
-        <div class="prof-img">
-            <img src="img/ZachHat_Crop2.jpg">
+    <script src="scripts/home.js"></script>
+    
+    <!-- Header and Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a id="nav-home" href="#home">Home</a></li>
+                <li><a id="nav-portfolio" href="pages/portfolio.html">Portfolio</a></li>
+                <li><a id="nav-contact" href="pages/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main Content -->
+    <div class="centered-container">
+        <!-- About Section -->
+        <div id="profile-splash">
+            <div id="img-section">
+                <img id="prof-img" src="img/ZachGlow.jpg" alt="ZachHeadshotImage">
+            </div>
+            <div id="about-section">
+                <h1 id="about-title">Zach Moss</h1>
+                <h2 id="about-description">Technical Artist | Graduate Student</h2>
+                <h3 id="top-text">I am a 3D technical artist and graduate student, studying digital content creation in the 3D world.
+                    I currently work as a 3D modeler in Maya.</h3>
+                <h3 id="bottom-text">Through experience and research, I aim to leverage modern procedural content generation methods - including deep learning and other generative A.I.,
+                    to lessen time and production constraints put on artists.</h3>
+            </div>
         </div>
-        <div class="button-container">
-            <button class="rounded-btn">Button 1</button>
-            <button class="rounded-btn">Button 2</button>
-            <button class="rounded-btn">Button 3</button>
+        <!-- Topical Cards -->
+        <div class="card-container">
+            <div id="card-experience" class="button-card">Experience</div>
+            <div id="card-education" class="button-card">Education</div>
+            <div id="card-cv" class="button-card">Curriculum Vitae</div>
+        </div>
+        <!-- Display Area -->
+        <div id="content-area">
+            <div id="main-card">
+            </div>
         </div>
     </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Zach Moss. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/zach-m-a21b2223a/" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/ZachMoss31" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a id="insta" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a id="bluesky" aria-label="Bluesky">
+                <i class="fa-brands fa-bluesky"></i>
+            </a>
+        </div>
+    </footer>
 </body>
 </html>

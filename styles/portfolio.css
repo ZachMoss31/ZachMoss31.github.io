@@ -1,0 +1,212 @@
+/* Body Styling */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: hsl(260, 15%, 39%);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styling */
+header {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 1;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.15s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #00c8ff; /* Color change on hover */
+    transform: scale(1.4);
+}
+
+/* Button Card Styling */
+/* Container to hold the button cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* Styling for individual button cards */
+.button-card {
+    background-color: #ccc;
+    padding: 25px 50px;
+    border-radius: 10px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 1px;
+    flex: 1 1 100%;
+    max-width: 210px;
+}
+
+/* Hover effect for button cards */
+.button-card:hover {
+    transform: scale(1.04);
+}
+
+#card-model:hover,
+#card-model.active {
+    background-color: #00c8ff;
+}
+
+
+#card-vfx:hover,
+#card-vfx.active {
+    background-color: #ff9500;
+}
+
+#card-engine:hover,
+#card-engine.active {
+    background-color: #030303;
+    color: white;
+}
+
+
+#card-ml:hover,
+#card-ml.active {
+    background-color: #ffe600;
+}
+
+#card-misc:hover,
+#card-misc.active {
+    background-color: #ff2f00;
+}
+
+
+/* Main Content Styling */
+.centered-container {
+    margin: 0px auto; /* Centers the container */
+    padding: 15px 6px 6px 6px;
+    width: 78%; /* Takes up 78% of the page width */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    flex: 1;
+    background-color: #ffffff; /* White background for the div */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Aligns content to the top */
+}
+
+/* Display Area Styling */
+#display-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Styling for individual cards */
+.card {
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    width: 100%; /* Fill the grid cell */
+    height: 400px; /* Fixed height */
+}
+
+/* Hover effect for cards */
+.card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.7) 100%);
+    color: white;
+    font-size: 14px;
+    position: relative;
+}
+
+/* Social Media Links */
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 24px; /* Icon size */
+    margin: 0 15px; /* Spacing between icons */
+    transition: color 0.3s ease, transform 0.1s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Hover Effect */
+.social-links a:hover {
+    color: #00c8ff; /* Light blue on hover */
+    transform: scale(1.2); /* Slightly enlarges icons */
+}
+
+.social-links #insta:hover {
+    color: #ff2a00; 
+    transform: scale(1.2); 
+}
+
+.social-links #bluesky:hover {
+    color: #ff2a00; 
+    transform: scale(1.2); 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Stack cards vertically for small screens in the display area */
+    #display-area {
+        grid-template-columns: 1fr; /* 1 column layout for small screens */
+    }
+
+    .card {
+        height: auto; /* Allow the cards to adjust their height */
+    }
+
+    /* Adjust the button card layout for small screens */
+    .card-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card-container .button-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .social-links a {
+        display: block; /* Stack links vertically */
+        margin: 10px auto; /* Center them */
+    }
+}
