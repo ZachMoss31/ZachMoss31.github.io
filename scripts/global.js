@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     //Set the active button based on the loaded page
-    const pathname = window.location.pathname; 
+    const pathname = window.location.pathname;
     const filename = pathname.split('/').pop();
 
     var activeButton = '';
@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Trigger "Active" button on page load
-    const activeButtonTarget = document.getElementById(activeButton);
+    var activeButtonTarget = document.getElementById(activeButton);
     if (activeButtonTarget) {
         activeButtonTarget.click();
     }

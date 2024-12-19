@@ -270,6 +270,11 @@ nav ul li a.active {
 
 
 /*-------------------------------------------------------- Individual Contact */
+.contact-container {
+    min-height: 900px;
+    padding-top: 100px;
+}
+
 #main-form-card {
     flex: 1;
     flex-direction: column;
@@ -378,7 +383,7 @@ footer {
 @media (max-width: 980px) {
     .centered-container {
         margin: 0px auto;
-        padding: 0px;
+        padding: 25px 0px 0px 0px;
         width: 100%;
         flex: 1;
         background-color: #fef8f3;
@@ -470,5 +475,9 @@ footer {
         background-color: white;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
         text-align: center;
+    }
+
+    #contact-container {
+        min-height: auto;
     }
 }
