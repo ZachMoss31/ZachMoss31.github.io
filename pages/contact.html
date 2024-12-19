@@ -9,10 +9,32 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="../styles/contact.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">(function(){ emailjs.init({ publicKey: "G-l-LOz8zdnEalla-",});})();</script>
+    <script type="text/javascript">
+        window.onload = function() {
+            var feedBack = document.getElementById('submit-feedback');
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // Check for issues ....
+
+                emailjs.sendForm('service_36rntsq', 'template_5btkkgx', '#contact-form')
+                    .then(() => {
+                        console.log('SUCCESS!');
+                        feedBack.innerText = 'Message Send Successful!';
+                        document.getElementById('contact-form').reset();
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                        feedBack.innerText = 'Message Send Failed!';
+                    });
+            });
+        }
+    </script>
 </head>
 <body>
-    <script src="../scripts/contact.js"></script>
+    <script src="../scripts/global.js"></script>
     
     <!-- Header and Navigation -->
     <header>
@@ -28,11 +50,11 @@
     <div class="centered-container">
         <!-- Display Area -->
         <div id="content-area">
-            <div id="main-card">
+            <div id="main-form-card">
                 <h1>Contact Me</h1>
                 
                 <!-- Contact Form -->
-                <form id="contactForm">
+                <form id="contact-form">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Name" required>
@@ -48,9 +70,10 @@
 
                     <!-- Topical Cards -->
                     <div class="card-container">
-                        <div id="card-submit" class="button-card">Submit</div>
+                        <input id="card-submit" class="button-card" type="submit" value="Send">
                     </div>
                 </form>
+                <label id="submit-feedback"> </label>
             </div>
         </div>
     </div>
@@ -67,9 +90,6 @@
             </a>
             <a id="insta" aria-label="Instagram">
                 <i class="fab fa-instagram"></i>
-            </a>
-            <a id="bluesky" aria-label="Bluesky">
-                <i class="fa-brands fa-bluesky"></i>
             </a>
         </div>
     </footer>

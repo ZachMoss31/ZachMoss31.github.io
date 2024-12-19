@@ -1,6 +1,7 @@
 /*-------------------------------------------------------- Global Styling (adjustable with JS later) */
 :root {
     --main-bg-color: rgb(56, 71, 67);
+    --main-div-color: rgb(254,248,243);
     --main-hover-color: rgb(239, 197, 8);
     --main-selected-color: rgb(226, 64, 14);
     --main-selection-color: rgb(239, 197, 8);
@@ -18,6 +19,7 @@
     background-color: var(--main-selection-color);
 }
 
+
 /*-------------------------------------------------------- Body Styling */
 html, body {
     margin: 0;
@@ -28,6 +30,7 @@ html, body {
     display: flex;
     flex-direction: column;
 }
+
 
 /*-------------------------------------------------------- Header Styling */
 header {
@@ -69,6 +72,7 @@ nav ul li a.active {
     transform: scale(1.4);
 }
 
+
 /*-------------------------------------------------------- Button Card Styling */
 .card-container {
     display: flex;
@@ -76,7 +80,6 @@ nav ul li a.active {
     justify-content: space-evenly;
 }
 
-/* Styling for individual button cards */
 .button-card {
     padding: 25px 50px;
     border-radius: 10px;
@@ -90,7 +93,6 @@ nav ul li a.active {
     background-color: #ccc;
 }
 
-/* Hover effect for button cards */
 .button-card:hover {
     background-color: var(--main-hover-color);
     transform: scale(1.03);
@@ -110,13 +112,58 @@ nav ul li a.active {
     width: 78%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     flex: 1;
-    background-color: #fef8f3;
+    background-color: var(--main-div-color);
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
 
+
+/*-------------------------------------------------------- Display Area Styling */
+#main-card {
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    display: flex;
+    margin: 14px auto;
+    padding: 5px 0px 30px 0px;
+    width: 83%;
+    grid-template-columns: repeat(1, 1fr);
+    border-radius: 10px;
+    color: black;
+    background-color: var(--main-bg-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Styling for individual cards */
+.card {
+    background-color: white;
+    margin: 15px auto;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    width: 60%;
+}
+
+.card.port {
+    border: 1px solid #ccc;
+    cursor: pointer;
+    width: 100%;
+    height: 400px;
+}
+
+/* Hover effect for cards */
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/*-------------------------------------------------------- Profile About Section Styling */
 #profile-splash {
     grid-template-columns: repeat(2, 1fr);
     display: grid;
@@ -165,42 +212,21 @@ nav ul li a.active {
     margin-right: 20px;
 }
 
-
-
-/*-------------------------------------------------------- Display Area Styling */
-#main-card {
-    flex: 1;
-    flex-direction: column;
-    justify-content: flex-start;
-    display: flex;
-    margin: 14px auto;
-    padding: 5px 0px 30px 0px;
-    width: 83%;
-    grid-template-columns: repeat(1, 1fr);
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    color: black;
-    background-color: var(--main-bg-color);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+/* About Display Area Styling */
+#display-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
     text-align: center;
+    padding: 20px;
+    margin-top: 20px;
 }
 
-/* Styling for individual cards */
-.card {
-    margin: 15px auto;
-    background-color: white;
-    color: black;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+.pdf {
+    margin: auto;
     text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-    width: 60%;
-}
-
-/* Hover effect for cards */
-.card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    aspect-ratio: 4 / 3;
 }
 
 .descriptions {
@@ -215,11 +241,96 @@ nav ul li a.active {
 }
 
 
-.pdf {
-    margin: auto;
+/*-------------------------------------------------------- Individual Portfolio Button Coloring */
+#card-model:hover,
+#card-model.active {
+    background-color: #00c8ff;
+}
+
+#card-vfx:hover,
+#card-vfx.active {
+    background-color: #ff9500;
+}
+
+#card-engine:hover,
+#card-engine.active {
+    background-color: #030303;
+    color: white;
+}
+
+#card-ml:hover,
+#card-ml.active {
+    background-color: #ffe600;
+}
+
+#card-misc:hover,
+#card-misc.active {
+    background-color: #ff2f00;
+}
+
+
+/*-------------------------------------------------------- Individual Contact */
+#main-form-card {
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    display: flex;
+    margin: 0px auto;
+    padding: 15px 0px 30px 0px;
+    width: 65%;
+    grid-template-columns: repeat(1, 1fr);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: black;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 90%;
-    aspect-ratio: 4 / 3;
+}
+
+#main-form-card h1 {
+    padding: 20px;
+}
+
+#main-form-card h2 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    margin: auto;
+    margin-bottom: 1rem;
+    width: 80%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+#card-submit {
+    border: 0px solid #ddd;
+}
+
+#submit-feedback {
+    padding-top: 25px;
+    font-size: large;
+    font-style: italic;
 }
 
 /*-------------------------------------------------------- Footer Styling */
@@ -342,5 +453,22 @@ footer {
         text-align: center;
         transition: transform 0.2s ease, box-shadow 0.3s ease;
         width: 90%;
+    }
+
+    #main-form-card {
+        flex: 1;
+        flex-direction: column;
+        justify-content: flex-start;
+        display: flex;
+        margin: 5px auto;
+        padding: 5px 0px 10px 0px;
+        width: 95%;
+        grid-template-columns: repeat(1, 1fr);
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        color: black;
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+        text-align: center;
     }
 }
