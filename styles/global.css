@@ -271,7 +271,7 @@ nav ul li a.active {
 
 /*-------------------------------------------------------- Individual Contact */
 .contact-container {
-    min-height: 900px;
+    min-height: 800px;
     padding-top: 100px;
 }
 
@@ -369,12 +369,7 @@ footer {
     transform: scale(1.2); /* Slightly enlarges icons */
 }
 
-.social-links #insta:hover {
-    color: var(--main-selected-color);
-    transform: scale(1.2); 
-}
-
-.social-links #bluesky:hover {
+.social-links #insta:hover, #youtube:hover {
     color: var(--main-selected-color);
     transform: scale(1.2); 
 }

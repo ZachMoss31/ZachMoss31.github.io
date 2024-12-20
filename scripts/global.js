@@ -25,9 +25,11 @@ class Experience {
 // Class object for storing Portfolio elements (should create a pop-out element with 'x' exit button?)
 class PortfolioObject {
     constructor(){
+        this.type = '';
+        this.icon = '';
+        this.display = ''; //This is the main gif or image on the card, as well as on top of the pop up
         this.title = '';
         this.overview = '';
-        this.display = ''; //This is the main gif or image on the card, as well as on top of the pop up
         this.demoVideo = '';
         this.featureSet = []; //gif, <h3>, <p>, gif ... etc
         this.other = []; //further details or embeddings
@@ -150,7 +152,7 @@ function BuildExperienceSection(sectionType = 'experience'){
     }
 }
 
-// Function to generate cards based on category
+// Function to generate cards based on category. This is used by sorting buttons that are currently on the back burner for later.
 function generateCards(category) {
     const displayArea = document.getElementById('display-area');
     const displayAreaName = document.getElementById('content-area-title');
@@ -195,6 +197,15 @@ function generateCards(category) {
     });
 }
 
+
+function FillPortfolioSection(){
+    //use helper method BuildPortfolioObject() below to create a filled card and pop up card,
+        //foreach 'portfolio' object in either a folder or .csv or json maybe
+}
+
+function BuildPortfolioObject(){
+    //use a portfolio object item here to fill a created card
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -267,20 +278,21 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'card-cv':
                 button.addEventListener('click', function() { BuildExperienceSection('cv'); });
                 break;
+            // These generate card methods are for the commented out section on portfolio.html
             case 'card-model':
-                button.addEventListener('click', function() { generateCards('model'); });
+                //button.addEventListener('click', function() { generateCards('model'); });
                 break;
             case 'card-vfx':
-                button.addEventListener('click', function() { generateCards('vfx'); });
+                //button.addEventListener('click', function() { generateCards('vfx'); });
                 break;
             case 'card-engine':
-                button.addEventListener('click', function() { generateCards('engine'); });
+                //button.addEventListener('click', function() { generateCards('engine'); });
                 break;
             case 'card-ml':
-                button.addEventListener('click', function() { generateCards('ml'); });
+                //button.addEventListener('click', function() { generateCards('ml'); });
                 break;
             case 'card-misc':
-                button.addEventListener('click', function() { generateCards('misc'); });
+                //button.addEventListener('click', function() { generateCards('misc'); });
                 break;
             case 'card-submit':
                 button.addEventListener('mouseout', function () { button.classList.remove('active'); });
