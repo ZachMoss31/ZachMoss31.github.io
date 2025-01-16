@@ -54,11 +54,20 @@ function BuildExperienceSection(sectionType = 'experience'){
 
         var experienceArray = [];
         
+        //Brevium Section
+        var breviumDescriptions = [
+            "Install proprietary SQL integration software onto client machines",
+            "Diagnosed and correct database errors via query troubleshooting",
+            "Provide solutions for improved performance within cloud database environment"
+        ]
+        var breviumExp = new Experience('Database Engineer Intern', 'Brevium Corp.', breviumDescriptions, 'January 2025', 'Present');
+        experienceArray.push(breviumExp);
+
         //Maya Model Section
         var mayaDescriptions = [
             "Prepared 3D models for printing and assembly alongside 3D modeling team",
             "Designed and created novel 3D models via Autodesk Maya through concept to completion",
-            "Implemented procedural modeling methods using Python and PyQt frameworks"
+            "Aided model team success through sharing Blender and Maya expertise"
         ]
         var mayaExp = new Experience('Maya 3D Modeler', 'Utah Valley University', mayaDescriptions, 'November 2024', 'Present');
         experienceArray.push(mayaExp);
