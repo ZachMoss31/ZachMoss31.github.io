@@ -24,6 +24,28 @@ function FillPortfolioSection(){
     bits.other.push('Test', 'Object','Data');
     portfolioObjectList.push(bits);
 
+    // Puddle
+    puddle = new PortfolioObject();
+    puddle .display = '../data/features/puddle/Puddle.png';
+    puddle .title = 'Puddle';
+    puddle .overview = 'Unity 3D project exploring 3D asset utilization from 3rd party sources';
+    puddle .demoVideo = '../data/features/bits-of-shadow/MenuHD.gif';
+    puddle .tagSet.push('unity');
+    puddle .featureSet.push('../data/features/bits-of-shadow/Switch.gif','../data/features/bits-of-shadow/TestScene.gif');
+    puddle .other.push('Test', 'Object','Data');
+    portfolioObjectList.push(puddle );
+
+    // Lost in Space
+    space = new PortfolioObject();
+    space.display = '../data/features/lost-in-space/LostSpace.png';
+    space.title = 'Lost in Space';
+    space.overview = 'Unity 2D project exploring 2D game asset creation from concept to digitalization';
+    space.demoVideo = '../data/features/bits-of-shadow/MenuHD.gif';
+    space.tagSet.push('unity');
+    space.featureSet.push('../data/features/bits-of-shadow/Switch.gif','../data/features/bits-of-shadow/TestScene.gif');
+    space.other.push('Test', 'Object','Data');
+    portfolioObjectList.push(space);
+
     // 3D Model
     model = new PortfolioObject();
     model.display = '../data/features/modeling/Models.jpg';
