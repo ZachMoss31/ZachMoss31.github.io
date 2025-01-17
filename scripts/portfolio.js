@@ -37,7 +37,7 @@ function FillPortfolioSection(){
 
     // Python GAN
     gan = new PortfolioObject();
-    gan.display = '../data/features/gan/GAN Training.jpg';
+    gan.display = '../data/features/gan/GAN Training.png';
     gan.title = 'Python - Machine Learning GAN';
     gan.overview = 'Python Generative Adversarial Network to generate images of handwritten digits';
     gan.demoVideo = '../data/features/gan/Class dist.jpg';
