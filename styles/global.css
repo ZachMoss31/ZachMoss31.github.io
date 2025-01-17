@@ -179,7 +179,7 @@ nav ul li a.active {
 #prof-img {
     width: 350px;
     border-radius: 45%;
-    transition: transform 0.35s ease;;
+    transition: transform 0.35s ease;
 }
 
 #prof-img:hover {
@@ -338,6 +338,36 @@ nav ul li a.active {
     font-style: italic;
 }
 
+
+/*-------------------------------------------------------- Individual Portfolio */
+.demo-image {
+    width: 400px;
+}
+
+.demo-tag {
+    border-radius: 50%;
+    width: 10%;
+    text-align: left;
+    margin: 15px auto;
+    font-weight: bold;
+    color: black;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.unity {
+    background-color: gray;
+}
+
+.python {
+    background-color: rgb(235, 215, 1);
+}
+
+.model {
+    background-color: #00b7ff;
+}
+
 /*-------------------------------------------------------- Footer Styling */
 footer {
     width: 100%;
@@ -369,7 +399,7 @@ footer {
     transform: scale(1.2); /* Slightly enlarges icons */
 }
 
-.social-links #insta:hover, #youtube:hover {
+.social-links #insta:hover, #youtube:hover, #artstation:hover {
     color: var(--main-selected-color);
     transform: scale(1.2); 
 }

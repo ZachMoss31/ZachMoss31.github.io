@@ -22,20 +22,6 @@ class Experience {
     }
 }
 
-// Class object for storing Portfolio elements (should create a pop-out element with 'x' exit button?)
-class PortfolioObject {
-    constructor(){
-        this.type = '';
-        this.icon = '';
-        this.display = ''; //This is the main gif or image on the card, as well as on top of the pop up
-        this.title = '';
-        this.overview = '';
-        this.demoVideo = '';
-        this.featureSet = []; //gif, <h3>, <p>, gif ... etc
-        this.other = []; //further details or embeddings
-    }
-}
-
 // Function to set theme *eventually given a passed theme of choice
 function SetTheme (theme) {
     const root = document.documentElement;
@@ -206,15 +192,6 @@ function generateCards(category) {
     });
 }
 
-
-function FillPortfolioSection(){
-    //use helper method BuildPortfolioObject() below to create a filled card and pop up card,
-        //foreach 'portfolio' object in either a folder or .csv or json maybe
-}
-
-function BuildPortfolioObject(){
-    //use a portfolio object item here to fill a created card
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     
