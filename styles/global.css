@@ -1,9 +1,9 @@
 /*-------------------------------------------------------- Global Styling (adjustable with JS later) */
 :root {
-    --main-bg-color: rgb(56, 71, 67);
-    --main-div-color: rgb(254,248,243);
+    --main-bg-color: rgb(17,17,17);
+    --main-div-color: rgb(231,230,226);
     --main-hover-color: rgb(239, 197, 8);
-    --main-selected-color: rgb(226, 64, 14);
+    --main-selected-color: rgb(210, 52, 58);
     --main-selection-color: rgb(239, 197, 8);
     --main-selection-text-color: rgb(255, 255, 255);
 }
@@ -340,6 +340,73 @@ nav ul li a.active {
 
 
 /*-------------------------------------------------------- Individual Portfolio */
+.body-no-scroll {
+    overflow: hidden;
+}
+
+/* Modal */
+#modal {
+    display: none; /* Hidden by default */
+    position: fixed;/* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#modal-content {
+    position: relative; /* Center the modal content */
+    top: 38.5%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* True centering */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%; /* Adjust to your needs */
+    height: 81%;
+    max-width: 53%;
+    max-height: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    overflow-y: auto;
+}
+
+/* Modal Fade-in Animation */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#close {
+    float: right;
+    clear: both;
+    font-size: 16px;
+    flex: 1 1 100%;
+    background-color: #ccc;
+    cursor: pointer;
+    border-radius: 7px;
+    width: 8%;
+    text-align: center;
+    margin: 0px auto;
+    transition: background-color 0.1s ease, transform 0.1s ease;
+}
+
+#close:hover {
+    background-color: var(--main-hover-color);
+    transform: scale(1.03);
+}
+
 
 /* Styling for individual portfolio cards */
 .portfolio-object {
@@ -363,6 +430,11 @@ nav ul li a.active {
 
 .demo-image {
     width: 400px;
+}
+
+.demo-vid {
+    width: 90%;
+    padding-top: 40px;
 }
 
 .demo-tag {

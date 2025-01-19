@@ -17,6 +17,30 @@ class PortfolioObject {
 portfolioObjectList = {};
 function FillPortfolioObjects(){
     
+    // Lost in Space
+    space = new PortfolioObject();
+    space.id = 'space';
+    space.display = '../data/features/lost-in-space/LostSpace.png';
+    space.title = 'Lost in Space';
+    space.overview = 'Unity 2D project exploring 2D game asset creation from concept to digitalization';
+    space.demoVideo = '../data/features/lost-in-space/LostInSpace.gif';
+    space.tagSet.push('unity');
+    space.featureSet.push('../data/features/lost-in-space/Cavern1.gif','../data/features/lost-in-space/Cavern2.gif','../data/features/lost-in-space/OnSurface2.gif');
+    space.other.push('Test', 'Object','Data');
+    portfolioObjectList[space.id] = space;
+
+    // Puddle
+    puddle = new PortfolioObject();
+    puddle.id = 'puddle';
+    puddle .display = '../data/features/puddle/Puddle.png';
+    puddle .title = 'Puddle';
+    puddle .overview = 'Unity 3D project exploring 3D asset utilization from 3rd party sources';
+    puddle .demoVideo = '../data/features/puddle/Puddle.gif';
+    puddle .tagSet.push('unity');
+    puddle .featureSet.push('../data/features/puddle/PuddleEffect.gif', '../data/features/puddle/Sewers.gif');
+    puddle .other.push('Test', 'Object','Data');
+    portfolioObjectList[puddle.id] = puddle;
+
     // Bits of Shadow
     bits = new PortfolioObject();
     bits.id = 'bits';
@@ -25,37 +49,9 @@ function FillPortfolioObjects(){
     bits.overview = 'Unity 3D project exploring 3D game engines and how they are used';
     bits.demoVideo = '../data/features/bits-of-shadow/MenuHD.gif';
     bits.tagSet.push('unity');
-    bits.featureSet.push('../data/features/bits-of-shadow/Switch.gif','../data/features/bits-of-shadow/TestScene.gif');
+    bits.featureSet.push('../data/features/bits-of-shadow/Switch.gif','../data/features/bits-of-shadow/TestScene.gif', '../data/features/bits-of-shadow/Exploration1.gif');
     bits.other.push('Test', 'Object','Data');
-    //portfolioObjectList.push(bits);
     portfolioObjectList[bits.id] = bits;
-
-    // Puddle
-    puddle = new PortfolioObject();
-    puddle.id = 'puddle';
-    puddle .display = '../data/features/puddle/Puddle.png';
-    puddle .title = 'Puddle';
-    puddle .overview = 'Unity 3D project exploring 3D asset utilization from 3rd party sources';
-    puddle .demoVideo = '../data/features/bits-of-shadow/MenuHD.gif';
-    puddle .tagSet.push('unity');
-    puddle .featureSet.push('../data/features/bits-of-shadow/Switch.gif','../data/features/bits-of-shadow/TestScene.gif');
-    puddle .other.push('Test', 'Object','Data');
-    //portfolioObjectList.push(puddle);
-    portfolioObjectList[puddle.id] = puddle;
-
-    // Lost in Space
-    space = new PortfolioObject();
-    space.id = 'space';
-    space.display = '../data/features/lost-in-space/LostSpace.png';
-    space.title = 'Lost in Space';
-    space.overview = 'Unity 2D project exploring 2D game asset creation from concept to digitalization';
-    space.demoVideo = '../data/features/bits-of-shadow/MenuHD.gif';
-    space.tagSet.push('unity');
-    space.featureSet.push('../data/features/bits-of-shadow/Switch.gif','../data/features/bits-of-shadow/TestScene.gif');
-    space.other.push('Test', 'Object','Data');
-    //portfolioObjectList.push(space);
-    portfolioObjectList[space.id] = space;
-
 
     // 3D Model
     model = new PortfolioObject();
@@ -67,9 +63,7 @@ function FillPortfolioObjects(){
     model.tagSet.push('model');
     model.featureSet.push('../data/features/modeling/AxeModel.gif','../data/features/modeling/Models.gif');
     model.other.push('Test', 'Object','Data');
-    //portfolioObjectList.push(model);
     portfolioObjectList[model.id] = model;
-
 
     // Python GAN
     gan = new PortfolioObject();
@@ -81,7 +75,6 @@ function FillPortfolioObjects(){
     gan.tagSet.push('python');
     gan.featureSet.push('../data/features/gan/GAN python.jpg','../data/features/gan/Class dist.jpg');
     gan.other.push('Test', 'Object','Data');
-    //portfolioObjectList.push(gan);
     portfolioObjectList[gan.id] = gan;
 }
 
@@ -91,8 +84,9 @@ function CreatePortfolioObjects(){
     // Use a portfolio object item here to fill a created card
     const displayArea = document.getElementById("display-area");
 
-    Object.keys(portfolioObjectList).forEach(portItem => {
+    Object.keys(portfolioObjectList).forEach(key => {
         // ! Would likely be better to create these class items on another page instead of creating on fly like this? Hide them?
+        var portItem = portfolioObjectList[key];
         var card = document.createElement('div');
         card.id = portItem.id;
         card.classList.add('portfolio-object');
@@ -125,50 +119,50 @@ function CreatePortfolioObjects(){
             card.appendChild(tmpTag);
         });
     });
-
-    portfolioObjectList.forEach(portItem => {
-
-    });
 }
-
 
 document.addEventListener('DOMContentLoaded', () => {
     FillPortfolioObjects();
     CreatePortfolioObjects();
     
     function OpenModal(portObject){
-        // ----------------------------------------------------------------- TO DO:: modify list and function above to take dictionary instead
-        // This would be better in a dictionary for this next part to just built a new portfolioObject based on the id as the key
+
+        if(modalInnerContent.innerHTML.length > 0)
+            modalInnerContent.innerHTML = '';
+        
         if(portObject.id in portfolioObjectList){
             var portfolioObject = portfolioObjectList[portObject.id];
-            modal.innerHTML += `<h2>${portfolioObject.title}</h2><p>${portfolioObject.overview}</p>`;
+            modalInnerContent.innerHTML += `<h2>${portfolioObject.title}</h2><p>${portfolioObject.overview}</p>`;
+            portfolioObject.featureSet.forEach( feature => {
+                var demoVid = document.createElement('img');
+                demoVid.classList.add('demo-vid');
+                demoVid.src = feature;
+                modalInnerContent.appendChild(demoVid);
+            });
+
             modal.style.display = 'block';
+            document.body.classList.add('body-no-scroll');
         }
     }
 
     function CloseModal(){
+        modalInnerContent.innerHTML = '';
         modal.style.display = 'none';
+        document.body.classList.remove('body-no-scroll');
     }
 
+    // Grab initial objects
+    var modal = document.getElementById("modal");
+    var modalInnerContent = document.getElementById("modal-content-inner");
+    var closeButton = document.getElementById("close");
+    closeButton.addEventListener('click', () => CloseModal());
+
     // Close the Modal initially
-    const modal = document.getElementById("modal");
     CloseModal();
     
     // Grab all portfolio objects and add events for them to fill modal
-    const portObjects = document.querySelectorAll('.portfolio-object');
+    var portObjects = document.querySelectorAll('.portfolio-object');
     portObjects.forEach(portObject => {
         portObject.addEventListener('click', () => OpenModal(portObject));
     });
-
-    // Close when clicking outside of modal
-    window.addEventListener('click', event => {
-        if (event.target === modal) {
-            closeModal();
-        }
-    });
-    
-    // Close button functionality
-    const closeButton = document.querySelector('.close');
-    closeButton.addEventListener('click', closeModal);
-
 });
