@@ -62,7 +62,7 @@ function BuildExperienceSection(sectionType = 'experience'){
         var amerDescriptions = [
             "Spearheaded .NET Rest API development between multiple cloud-based SQL databases",
             "Modernized existing legacy applications as part of .NET team using agile software approach ",
-            "Integrated .NET desktop applications with Salesforce features via .NET Core"
+            "Implement novel features for C# to SQL integrations for future applications"
         ]
         var amerExp = new Experience('C# .NET Core Desktop Application Developer', 'Ameritech Data Solutions', amerDescriptions, 'February 2024', 'April 2024');
         experienceArray.push(amerExp);
